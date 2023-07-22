@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Define a class for all caps - #e6e5e5 */
+.all-caps {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hide the scrollbar for webkit-based browsers (Chrome, Safari, Edge) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide the scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* CSS styles for map container and map wrapper */
+.map-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.map-wrapper {
+  max-width: 100%;
+  max-height: 400px;
+  /* Add any other desired styles */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* CSS styles for the Collapse component transition */
+.additional-content {
+  opacity: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: opacity 1000ms, transform 1500ms;
 }
+
+.additional-content.show {
+  opacity: 1;
+  transform: scaleY(1);
+  color: #535353;
+}
+
+

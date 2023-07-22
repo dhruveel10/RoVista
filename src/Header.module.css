@@ -1,0 +1,35 @@
+/* Header.css */
+
+header {
+    background-color: #747070;
+    padding: 10px;
+    color: #fff !important;
+  }
+  
+  .logo {
+    margin-left: 10px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .logo:hover {
+    color: #ff0000;
+  }
+  
+  .header {
+    margin-right: 10px;
+  }
+  
+  .nav-link {
+    margin-right: 50px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: #5c5858;
+    text-decoration: none;
+  }
+  
