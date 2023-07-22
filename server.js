@@ -3,10 +3,15 @@ const csvParser = require('csv-parser');
 const fs = require('fs');
 const cors = require('cors');
 const app = express();
+const path = require('path');
 
 app.use(cors({
   origin: 'http://localhost:3000',
 })); // Enable CORS
+
+// Serve the static files from the React app
+const buildPath = path.join(__dirname, 'build');
+app.use(express.static(buildPath));
 
 
 // Define an API endpoint for parsing CSV files
@@ -74,8 +79,19 @@ app.get('/api/asndata/:asnId', (req, res) => {
     });
 });
 
+// All other routes should serve the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
+
+// Handle non-existent routes (404 Not Found)
+app.use((req, res, next) => {
+  res.status(404).send("404 Not Found");
+});
+
+const port = process.env.PORT || 5000;
 
 // Start the server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
