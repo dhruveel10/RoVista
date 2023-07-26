@@ -1,3 +1,3 @@
 # RoVista
 
-Checkout the main branch
+Checkout the master branch
